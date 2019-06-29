@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>4-PersonalPortfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="../font-awesome.min.css">
 </head>
 <body>
     <header id="header">
@@ -46,11 +45,46 @@
     </section>
 
 
+    <div class="navbar_ui" >
+        <div id="navbar_foldout_toggler">
+            <span id="hamburger_top" class="fcc_hamburger"></span>
+            <span id="hamburger_middle" class="fcc_hamburger"></span>
+            <span id="hamburger_bottom" class="fcc_hamburger"></span>
+            <span id="fcc_foldout_toggler_background"></span>
+        </div>
+        <input id="fcc_toggle" onclick="hamburgerTransform()" type="checkbox" title="CTRL + SHIFT + O">
+    </div>
+
+    <div class="navbar-phone" style="display: none;">
+        <ul>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#welcome-section">About</a></li>
+        </ul>
+    </div>
 
 
 
+<script>
+            let hamburgerTop = document.querySelector('#hamburger_top');
+            let hamburgerTop = document.querySelector('#hamburger_top');
+            let hamburgerTop = document.querySelector('#hamburger_top');
 
+            
+            function hamburgerTransform() {
+                let navbar = document.querySelector('.navbar-phone');
+                navbar.style.display = navbar.style.display === 'none'? '':'none';
+                console.dir(hamburger);
+                hamburger.forEach(el => {
+                    el.classList.add('');
+                    transform_top
+                    transform_middle
+                    transform_bottom
+                    console.log( el.className); 
+                });
 
+            }
+</script>
 </body>
 
 
