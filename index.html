@@ -58,15 +58,15 @@
     <div class="cover" onclick="hamburgerTransform()">
         <div class="navbar-phone">
             <ul>
-                <li><a href="#contact" ontap="hamburgerTransform()">Contact</a></li>
-                <li><a href="#projects" ontap="hamburgerTransform()">Work</a></li>
-                <li><a href="#welcome-section" ontap="hamburgerTransform()">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#welcome-section">About</a></li>
             </ul>
         </div>
     </div>
 
 
-
+<script src="js/smoothscroll.js"></script>
 <script>
         let hamburgerTop = document.querySelector('#hamburger_top');
         let hamburgerMiddle = document.querySelector('#hamburger_middle');
@@ -87,6 +87,29 @@
                 hamburgerBottom.classList.add('transform_bottom');
             }
         }
+
+        function scrollToSection (e) {
+            console.dir(e.currentTarget.attributes.href.nodeValue);
+            let sectionId = e.currentTarget.attributes.href.nodeValue;
+            switch (sectionId) {
+                case '#welcome-section': document.querySelector('#welcome-section').scrollIntoView({ behavior: 'smooth' }); break;
+                case '#contact':  document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' }); break;
+            }
+        }
+
+        let welcomeSection = document.querySelector('#welcome-section');
+        let contactSection = document.querySelector('#contact');
+
+        let links = document.querySelectorAll('a');
+        links.forEach(el => {
+            el.addEventListener('click', scrollToSection);
+        })
+        
+
+        
+        // document.querySelector('#welcome-section').scrollIntoView({ behavior: 'smooth' });
+        // document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+
 </script>
 </body>
 
