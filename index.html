@@ -45,7 +45,7 @@
     </section>
 
 
-    <div class="navbar_ui" >
+    <div class="navbar_ui">
         <div id="navbar_foldout_toggler">
             <span id="hamburger_top" class="fcc_hamburger"></span>
             <span id="hamburger_middle" class="fcc_hamburger"></span>
@@ -55,35 +55,38 @@
         <input id="fcc_toggle" onclick="hamburgerTransform()" type="checkbox" title="CTRL + SHIFT + O">
     </div>
 
-    <div class="navbar-phone" style="display: none;">
-        <ul>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#projects">Work</a></li>
-            <li><a href="#welcome-section">About</a></li>
-        </ul>
+    <div class="cover" onclick="hamburgerTransform()">
+        <div class="navbar-phone">
+            <ul>
+                <li><a href="#contact" ontap="hamburgerTransform()">Contact</a></li>
+                <li><a href="#projects" ontap="hamburgerTransform()">Work</a></li>
+                <li><a href="#welcome-section" ontap="hamburgerTransform()">About</a></li>
+            </ul>
+        </div>
     </div>
 
 
 
 <script>
-            let hamburgerTop = document.querySelector('#hamburger_top');
-            let hamburgerTop = document.querySelector('#hamburger_top');
-            let hamburgerTop = document.querySelector('#hamburger_top');
+        let hamburgerTop = document.querySelector('#hamburger_top');
+        let hamburgerMiddle = document.querySelector('#hamburger_middle');
+        let hamburgerBottom = document.querySelector('#hamburger_bottom');
 
-            
-            function hamburgerTransform() {
-                let navbar = document.querySelector('.navbar-phone');
-                navbar.style.display = navbar.style.display === 'none'? '':'none';
-                console.dir(hamburger);
-                hamburger.forEach(el => {
-                    el.classList.add('');
-                    transform_top
-                    transform_middle
-                    transform_bottom
-                    console.log( el.className); 
-                });
-
+        
+        function hamburgerTransform() {
+            let cover = document.querySelector('.cover');
+            if (cover.classList.contains('to-left') === true) {
+                cover.classList.remove('to-left');
+                hamburgerTop.classList.remove('transform_top');
+                hamburgerMiddle.classList.remove('transform_middle');
+                hamburgerBottom.classList.remove('transform_bottom');
+            } else {
+                cover.classList.add('to-left');
+                hamburgerTop.classList.add('transform_top');
+                hamburgerMiddle.classList.add('transform_middle');
+                hamburgerBottom.classList.add('transform_bottom');
             }
+        }
 </script>
 </body>
 
